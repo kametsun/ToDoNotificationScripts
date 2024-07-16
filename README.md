@@ -1,0 +1,2 @@
+# ToDoNotificationScripts
+NotionのデータベースからToDoリストをLINEに通知するbotです。
