@@ -1,5 +1,5 @@
 const FetchToDoView = () => {
-  const URL = PropertiesService.getScriptProperties().getProperty("TODO_VIEW_URL")
+  const URL = `https://api.notion.com/v1/databases/${PropertiesService.getScriptProperties().getProperty("DB_ID")}/query`
   const headers = {
     "Notion-Version": "2022-06-28",
     "Content-Type": "application/json",

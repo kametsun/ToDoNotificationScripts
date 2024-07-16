@@ -4,9 +4,9 @@
 const doPost = (e) => {
   const json = JSON.parse(e.postData.contents)
 
-  WriteLog(json)
-
-  if(json.events[0].message.text === "タスク一覧"){
+  if (json.events[0].message.text === "タスク一覧") {
     Trigger()
   }
+
+  WriteLog(json)
 }
