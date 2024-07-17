@@ -9,13 +9,7 @@ const doPost = (e) => {
   if (messageText === "タスク一覧") {
     Trigger()
   } else if (messageText.startsWith("add ")) {
-    const taskTitle = messageText.slice(4).trim()
-    if (taskTitle) {
-      AddToDo(taskTitle)
-      SendLine(replyToken, `タスク${taskTitle}を追加しました。`)
-    } else {
-      SendLine(replyToken, `タスク名を指定してください。`)
-    }
+    AddToDo(replyToken, messageText)
   }
 
   WriteLog(json)

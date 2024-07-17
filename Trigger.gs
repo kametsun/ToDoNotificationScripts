@@ -1,5 +1,5 @@
 const Trigger = () => {
-  const url = "https://api.line.me/v2/bot/message/push";
+  const URL = "https://api.line.me/v2/bot/message/push";
   const apiKey = `Bearer ${PropertiesService.getScriptProperties().getProperty("LINE_TOKEN")}`;
 
   const toDoList = GetToDoNames().map(name => `・${name}`).join("\n")
@@ -24,5 +24,5 @@ const Trigger = () => {
     "headers": headers
   };
 
-  UrlFetchApp.fetch(url, options);
+  UrlFetchApp.fetch(URL, options);
 }

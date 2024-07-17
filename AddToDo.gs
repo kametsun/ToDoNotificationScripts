@@ -1,11 +1,14 @@
-const AddToDo = (taskMessage) => {
+const AddToDo = (replyToken, taskMessage) => {
+  const taskTitle = taskMessage.slice(4).trim()
+  if (!taskTitle) SendLine(replyToken, "タスク名を指定してください。")
+
   const payload = JSON.stringify({
     parent: { database_id: PropertiesService.getScriptProperties().getProperty("DB_ID") },
     properties: {
       Title: {
         title: [
           {
-            text: { content: taskMessage }
+            text: { content: taskTitle }
           }
         ]
       },
@@ -24,5 +27,6 @@ const AddToDo = (taskMessage) => {
     }
   })
 
-  FetchPage(payload)
+  FetchNotion(null,payload)
+  SendLine(replyToken, `タスク${taskTitle}を追加しました。`)
 }

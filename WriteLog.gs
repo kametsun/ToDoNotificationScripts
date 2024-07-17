@@ -1,3 +1,6 @@
+/**
+ * ログ書き込みを行う
+ */
 const WriteLog = (json) => {
   const replyToken = json.events[0].replyToken;
   const messageId = json.events[0].message.id;
