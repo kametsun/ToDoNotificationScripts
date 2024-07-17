@@ -27,6 +27,6 @@ const AddToDo = (replyToken, taskMessage) => {
     }
   })
 
-  FetchNotion(null,payload)
+  FetchNotion(null, payload)
   SendLine(replyToken, `タスク${taskTitle}を追加しました。`)
 }
