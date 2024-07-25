@@ -10,6 +10,8 @@ const doPost = (e) => {
     Trigger()
   } else if (messageText.startsWith("add ")) {
     AddToDo(replyToken, messageText)
+  } else if (messageText.startsWith("done ")) {
+    UpdateToDo(replyToken, messageText)
   }
 
   WriteLog(json)

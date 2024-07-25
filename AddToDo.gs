@@ -1,6 +1,9 @@
 const AddToDo = (replyToken, taskMessage) => {
   const taskTitle = taskMessage.slice(4).trim()
-  if (!taskTitle) SendLine(replyToken, "タスク名を指定してください。")
+  if (!taskTitle) {
+    SendLine(replyToken, "タスク名を指定してください。")
+    return
+  }
 
   let resMessage = `タスク 【${taskTitle}】 を追加しました。\n\n`
   resMessage += "時間が空き次第、タスクの分類分けをしてください。"
@@ -30,6 +33,6 @@ const AddToDo = (replyToken, taskMessage) => {
     }
   })
 
-  FetchNotion(null, payload)
+  FetchNotion(null, payload, null)
   SendLine(replyToken, resMessage)
 }
