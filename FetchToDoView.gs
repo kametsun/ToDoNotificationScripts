@@ -36,5 +36,6 @@ const FetchToDoView = () => {
     }
   });
 
-  return JSON.parse(FetchNotion(url, payload).getContentText())
+
+  return JSON.parse(FetchNotion(url, payload, null).getContentText())
 }

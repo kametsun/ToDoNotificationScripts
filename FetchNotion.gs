@@ -1,4 +1,4 @@
-const FetchNotion = (url, payload) => {
+const FetchNotion = (url, payload, method) => {
   const targetUrl = url ? url : "https://api.notion.com/v1/pages"
   const headers = {
     "Notion-Version": "2022-06-28",
@@ -7,7 +7,7 @@ const FetchNotion = (url, payload) => {
   }
 
   const options = {
-    method: "POST",
+    method: method ? method : "POST",
     headers: headers,
     payload: payload,
     redirect: "follow"
